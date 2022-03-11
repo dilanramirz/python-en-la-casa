@@ -23,12 +23,34 @@ def main():
             self.transporte = 0
             self.pension = 0
         
+            if self.__sueldo < 2000000:
+                self.alimentacion = 80000
+                self.transporte = 60000
+                self.pension = 0
+            else:
+                self.alimentacion = 0
+                self.transporte = 0
+
+            self.pension = self.__sueldo *0.04
+            self.salud = self.__sueldo * 0.0375
+            
+            
+            self.dev = self.alimentacion + self.transporte
+                
+            
+            
+            self.ded = self.pension + self.salud
+            
+        
         def mostrarempleados(self):
             super().mostrarPersona()
             print(f"Sueldo: {self.__sueldo}")
-            print(f"Transporte: {self.transporte}")
-            print(f"alimentacion: {self.alimentacion}")
-            print(f"Pension: {self.pension}")
+            print(f"Devengado: {self.dev}")
+            print(f"Deducciones: {self.ded}")
+            print(f"Total a pagar: {self.pension + self.__sueldo + self.dev + self.ded}")
+
+        def calcularDevengado():
+            dev = self.__sueldo
         
     
     empleado1 = Empleado()
